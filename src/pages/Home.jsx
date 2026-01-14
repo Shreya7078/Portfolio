@@ -1,11 +1,11 @@
-// src/pages/Home.jsx
+
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
 import Projects from "../components/sections/Projects";
-import Skills from "../Components/sections/Skills";
-import Profiles from "../Components/sections/Profiles";
-import Contact from "../Components/sections/Contact";
+import Skills from "../components/sections/Skills";
+import Profiles from "../components/sections/Profiles";
+import Contact from "../components/sections/Contact";
 
 
 const Home = () => {
@@ -19,7 +19,6 @@ const Home = () => {
         <Skills/>
         <Profiles/>
         <Contact/>
-        {/* next: Skills, Profiles, Contact */}
       </main>
     </div>
   );
