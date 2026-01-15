@@ -87,12 +87,16 @@ const Navbar = () => {
           </div>
 
           {/* CTA */}
-          <button className="group relative overflow-hidden rounded-full bg-white px-5 py-2 text-[0.75rem] font-bold text-black transition-all hover:pr-8 active:scale-95">
+          <a
+            href="/ShreyaJain_Resume.pdf"
+            download
+            className="group relative overflow-hidden rounded-full bg-white px-5 py-2 text-[0.75rem] font-bold text-black transition-all hover:pr-8 active:scale-95"
+          >
             <span className="relative z-10">RESUME</span>
             <span className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 transition-all group-hover:opacity-100">
               ↓
             </span>
-          </button>
+          </a>
         </div>
       </motion.div>
     </header>
