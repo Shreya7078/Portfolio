@@ -143,10 +143,10 @@ const Contact = () => {
 
         {/* Footer */}
         <div className="mt-24 pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-[9px] font-bold text-slate-600 uppercase tracking-[0.5em]">
+          <p className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.5em]">
             © 2026 Shreya Jain
           </p>
-          <div className="flex gap-6 text-[9px] font-bold text-slate-800 uppercase tracking-widest">
+          <div className="flex gap-6 text-[9px] font-bold text-slate-500 uppercase tracking-widest">
              <span>Ghaziabad, India</span>
              <span className="italic">Open for Internships</span>
           </div>

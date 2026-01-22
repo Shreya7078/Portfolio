@@ -97,7 +97,7 @@ const Profiles = () => {
                 <img
                   src={profile.icon}
                   alt={profile.name}
-                  className={`h-8 w-8 transition-all duration-300 invert-[0.8] group-hover:invert-0 filter ${profile.color.replace('text-', 'fill-')}`}
+                  className={`h-8 w-8 transition-all duration-300 filter invert`}
                 />
               </div>
 

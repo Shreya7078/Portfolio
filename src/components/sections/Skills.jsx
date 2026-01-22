@@ -63,14 +63,14 @@ const Skills = () => {
         </div>
 
         {/* 1. The Infinite Marquee (Visual Interest) */}
-        <div className="relative mb-20 flex overflow-hidden py-5 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-slate-950 before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:after:from-slate-950 after:to-transparent">
+        <div className="relative mb-20 flex overflow-hidden py-5 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-slate-650 before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:after:from-slate-650 after:to-transparent">
           <motion.div 
             className="flex whitespace-nowrap gap-10"
             animate={{ x: [0, -1000] }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {[...allSkills, ...allSkills].map((skill, i) => (
-              <span key={i} className="text-4xl md:text-6xl font-black text-slate-900 transition-colors hover:text-cyan-500/20 uppercase italic">
+              <span key={i} className="text-4xl md:text-6xl font-black text-slate-700 transition-colors hover:text-cyan-500/20 uppercase italic">
                 {skill}
               </span>
             ))}

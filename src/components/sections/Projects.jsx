@@ -135,7 +135,7 @@ const Projects = () => {
         
         {/* Scroll Instruction */}
         <div className="mt-8 flex justify-center">
-            <p className="text-[10px] text-slate-600 uppercase tracking-widest animate-pulse font-bold">
+            <p className="text-[10px] text-slate-300 uppercase tracking-widest animate-pulse font-bold">
                ← Drag to explore →
             </p>
         </div>
