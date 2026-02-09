@@ -5,17 +5,32 @@ import { Mail, MapPin, Github, Linkedin, ArrowRight } from "lucide-react";
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Demo Logic
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Message sent! (This is a demo)");
-      setFormData({ name: "", email: "", message: "" });
-    }, 1000);
+    setIsSuccess(false);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mjgekpad", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+      }
+    } catch (err) {
+      console.log("Error sending message");
+    }
+
+    setIsSubmitting(false);
   };
 
   const handleChange = (e) => {
@@ -51,7 +66,7 @@ const Contact = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Left Column: Info Cards */}
+          
           <div className="lg:col-span-1 space-y-6">
             <motion.div whileHover={{ y: -5 }} className="p-8 rounded-[2rem] border border-slate-800 bg-slate-900/40 backdrop-blur-md group hover:border-cyan-500/30 transition-all">
               <Mail className="text-cyan-400 mb-4 opacity-80 group-hover:scale-110 transition-transform" size={28} />
@@ -72,7 +87,6 @@ const Contact = () => {
             </div>
           </div>
 
-        
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -81,45 +95,55 @@ const Contact = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
 
             <form onSubmit={handleSubmit} className="relative z-10 space-y-8 text-left">
+              
+              <input type="hidden" name="_subject" value="New Portfolio Contact Message" />
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 ml-1">Name</label>
+                  <label className="text-[13px] font-black uppercase tracking-[0.1em] text-slate-500 ml-1">Name</label>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-b border-slate-800 py-3 text-white outline-none transition-all focus:border-cyan-500 focus:bg-cyan-500/[0.02] placeholder:text-[11px] placeholder:text-slate-600"
-                    placeholder="ENTER YOUR NAME"
+                    className="w-full bg-transparent border-b text-sm border-slate-800 py-3 text-white outline-none transition-all focus:border-cyan-500 focus:bg-cyan-500/[0.02]"
+                    placeholder="Enter Your Name"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 ml-1">Email</label>
+                  <label className="text-[13px] font-black uppercase tracking-[0.1em] text-slate-500 ml-1">Email</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-transparent border-b border-slate-800 py-3 text-white outline-none transition-all focus:border-cyan-500 focus:bg-cyan-500/[0.02] placeholder:text-[11px] placeholder:text-slate-600"
-                    placeholder="YOUR@GMAIL.COM"
+                    className="w-full bg-transparent border-b text-sm border-slate-800 py-3 text-white outline-none transition-all focus:border-cyan-500 focus:bg-cyan-500/[0.02]"
+                    placeholder="Your@gmail.com"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-[12px] font-black uppercase tracking-[0.2em] text-slate-500 ml-1">Your Message</label>
+                <label className="text-[13px] font-black uppercase tracking-[0.1em] text-slate-500 ml-1">Your Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
                   required
-                  className="w-full bg-transparent border-b border-slate-800 py-3 text-white outline-none transition-all focus:border-cyan-500 focus:bg-cyan-500/[0.02] resize-none placeholder:text-[11px] placeholder:text-slate-600"
-                  placeholder="TELL ME ABOUT YOUR PROJECT..."
+                  className="w-full bg-transparent border-b text-sm border-slate-800 py-3 text-white outline-none transition-all focus:border-cyan-500 focus:bg-cyan-500/[0.02] resize-none"
+                  placeholder="Tell me About Your Project..."
                 />
               </div>
+
+              {/* SUCCESS BANNER */}
+              {isSuccess && (
+                <div className="text-green-400 text-sm font-semibold">
+                  Message Sent Successfully ✓
+                </div>
+              )}
 
               <div className="pt-4 flex justify-end">
                 <button
@@ -141,7 +165,6 @@ const Contact = () => {
           </motion.div>
         </div>
 
-       
         <div className="mt-24 pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.5em]">
             © 2026 Shreya Jain

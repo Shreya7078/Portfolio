@@ -70,7 +70,7 @@ const Skills = () => {
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           >
             {[...allSkills, ...allSkills].map((skill, i) => (
-              <span key={i} className="text-4xl md:text-6xl font-black text-slate-700 transition-colors hover:text-cyan-500/20 uppercase italic">
+              <span key={i} className="text-3xl md:text-5xl font-black text-slate-500 transition-colors hover:text-cyan-500/20 uppercase italic">
                 {skill}
               </span>
             ))}

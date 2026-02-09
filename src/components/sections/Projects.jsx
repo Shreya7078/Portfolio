@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { projects } from "../../data/projects";
-import { Github, ExternalLink, ArrowRight, Play } from "lucide-react";
+import { Github, ArrowRight } from "lucide-react";
 
 const Projects = () => {
+
+  const [expanded, setExpanded] = useState(null);
+
   return (
     <section id="projects" className="relative py-24 bg-slate-950 overflow-hidden">
 
@@ -46,7 +50,6 @@ const Projects = () => {
               
               <div className="relative h-[550px] flex flex-col rounded-[2.5rem] border border-slate-800 bg-slate-900/30 overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-cyan-500/40 shadow-2xl">
                 
-                
                 <div className="relative h-[55%] w-full overflow-hidden bg-slate-950">
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-black/20 z-10" />
                   <img 
@@ -65,13 +68,22 @@ const Projects = () => {
                 </div>
 
                 <div className="flex-1 p-8 flex flex-col justify-between bg-gradient-to-b from-slate-900/50 to-slate-950">
+                  
                   <div className="space-y-3">
                     <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-[0.9rem] text-slate-400 line-clamp-2 leading-relaxed">
+
+                    <p className={`text-[0.9rem] text-slate-400 leading-relaxed ${expanded === project.id ? "" : "line-clamp-2"}`}>
                       {project.description}
                     </p>
+
+                    <button
+                      onClick={() => setExpanded(expanded === project.id ? null : project.id)}
+                      className="text-cyan-400 text-xs font-semibold hover:underline"
+                    >
+                      {expanded === project.id ? "Show Less" : "Read More"}
+                    </button>
                   </div>
 
                   <div className="flex items-center justify-between pt-6 border-t border-slate-800/50">
@@ -92,7 +104,6 @@ const Projects = () => {
                       )}
                     </div>
                     
-               
                     <a 
                       href={project.demo || "#"} 
                       target={project.demo ? "_blank" : "_self"}
@@ -103,14 +114,6 @@ const Projects = () => {
                         : "bg-slate-800/50 cursor-not-allowed opacity-70"
                       }`}
                     >
-               
-                      {project.demo && (
-                        <span className="relative flex h-2 w-2">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-950"></span>
-                        </span>
-                      )}
-
                       <span className={`text-[11px] font-black uppercase tracking-wider ${project.demo ? "text-slate-950" : "text-slate-500"}`}>
                         {project.demo ? "Live Preview" : "Coming Soon"}
                       </span>
@@ -128,7 +131,6 @@ const Projects = () => {
           
           <div className="min-w-[100px] h-1" />
         </div>
-        
 
         <div className="mt-8 flex justify-center">
             <p className="text-[10px] text-slate-300 uppercase tracking-widest animate-pulse font-bold">
