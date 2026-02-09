@@ -28,7 +28,7 @@ const Contact = () => {
       <div className="absolute bottom-0 right-1/4 h-96 w-96 bg-violet-600/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        {/* Header Section */}
+      
         <div className="mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
@@ -72,7 +72,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Right Column: Main Form Card */}
+        
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -141,7 +141,7 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* Footer */}
+       
         <div className="mt-24 pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.5em]">
             © 2026 Shreya Jain

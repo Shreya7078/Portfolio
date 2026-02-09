@@ -129,7 +129,7 @@ const Hero = () => {
               </div> */}
             </motion.div>
 
-            {/* Floating Tech Badge */}
+      
             <motion.div 
               animate={{ x: [0, 10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -144,7 +144,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Bottom Scroll Indicator */}
+   
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
         <motion.div 
           animate={{ y: [0, 10, 0] }}

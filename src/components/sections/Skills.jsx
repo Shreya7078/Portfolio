@@ -24,7 +24,7 @@ const Skills = () => {
     },
   ];
 
-  // For the infinite marquee
+
   const allSkills = [...skills.ml, ...skills.frontend, ...skills.tools];
 
   return (
@@ -33,7 +33,7 @@ const Skills = () => {
       <div className="absolute top-1/2 left-0 h-[400px] w-[400px] bg-violet-600/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6">
-        {/* Header with Consistent Hyphen Styling */}
+
         <div className="mb-16">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
@@ -62,7 +62,7 @@ const Skills = () => {
           </div>
         </div>
 
-        {/* 1. The Infinite Marquee (Visual Interest) */}
+
         <div className="relative mb-20 flex overflow-hidden py-5 before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-slate-650 before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:after:from-slate-650 after:to-transparent">
           <motion.div 
             className="flex whitespace-nowrap gap-10"
@@ -77,7 +77,7 @@ const Skills = () => {
           </motion.div>
         </div>
 
-        {/* 2. Interactive Skill Cards */}
+
         <div className="grid gap-6 md:grid-cols-3">
           {skillGroups.map((group, index) => (
             <motion.div

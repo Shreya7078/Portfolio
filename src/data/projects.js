@@ -2,6 +2,16 @@
 export const projects = [
   {
     id: 1,
+    title: "Customer Churn Predictor",
+    description:
+      "Built and deployed a full-stack ML system that predicts telecom customer churn probability with real-time visualization.",
+    image:"projects/Churn_Prediction.png",
+    tech: ["Flask",   "Python",   "ReactJS"],
+    github: "https://github.com/Shreya7078/ChurnPrediction",
+    demo: "https://churn-prediction-seven.vercel.app/",
+  },
+  {
+    id: 2,
     title: "Movie Recommendation System",
     description:
       "Content-based movie recommendation system using TF-IDF and similarity techniques to suggest movies based on plot analysis. Includes search, filtering, and web-based interaction.",
@@ -11,7 +21,7 @@ export const projects = [
     demo: "https://movie-recommendation-system-tber.onrender.com/",
   },
   {
-    id: 2,
+    id: 3,
     title: "CampusQ - Campus Helpdesk Platform",
     description:
       "Responsive campus helpdesk application with role-based dashboards for students and admins, featuring animated UI interactions and clean component-based design.",
@@ -21,7 +31,7 @@ export const projects = [
     demo: "https://campus-q.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Pexels Clone",
     description:
       "Frontend application that fetches and displays high-quality images using the Pexels API with search, filtering, and image saving functionality.",
@@ -31,7 +41,7 @@ export const projects = [
     demo: "https://pexels-clone-eta.vercel.app/",
   },
 {
-    id: 4,
+    id: 5,
     title: "Obys Agency UI Clone",
     description:
       "Responsive UI clone of the Obys Agency website, recreating its visual design, smooth scrolling behavior, and interactive animations using GSAP. Focused on layout precision and animation timing",

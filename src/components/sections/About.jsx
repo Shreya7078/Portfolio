@@ -63,20 +63,18 @@ const About = () => {
               As a CSE (AI & ML) undergraduate, I focus on building and deploying machine learning models and integrating them with frontend applications.
             </p>
             <p>
-              I enjoy working across the full workflow — from data preprocessing and model training to API integration and UI development. <br />
+              I enjoy working across the full workflow, from data preprocessing and model training to API integration and UI development. <br />
               My goal is to create projects that are technically sound, easy to use, and grounded in real-world problem solving.
             </p>
           </div>
         </motion.div>
 
-        {/* Education Block - md:row-span-2 to match Bio height */}
+      
         <motion.div 
           variants={itemVariants}
           className="group md:col-span-2 md:row-span-2 border border-slate-800 bg-gradient-to-br from-blue-500/10 to-indigo-500/5 p-8 rounded-3xl transition-all duration-300 hover:border-blue-500/40 relative overflow-hidden flex flex-col justify-center"
         >
-          {/* <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-            <GraduationCap size={100} />
-          </div> */}
+
           <GraduationCap className="mb-4 text-blue-400" size={32} />
           <h3 className="text-sm font-bold text-white uppercase tracking-tighter mb-8 italic">Education</h3>
           <div className="space-y-10 relative z-10">
@@ -106,7 +104,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Leadership Block - Sized for alignment */}
+        
         <motion.div 
           variants={itemVariants}
           className="group md:col-span-2 border border-slate-800 bg-gradient-to-br from-emerald-500/10 to-green-500/5 p-6 rounded-3xl transition-all duration-300 hover:border-emerald-500/40 relative overflow-hidden"
@@ -128,7 +126,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Focus Block */}
+       
         <motion.div 
           variants={itemVariants}
           className="group md:col-span-2 border border-slate-800 bg-slate-900/40 p-6 rounded-3xl transition-all duration-300 hover:border-cyan-500/40"
@@ -144,7 +142,7 @@ const About = () => {
           </ul>
         </motion.div>
 
-        {/* Skills/Stack Block - Leadership and Focus align with this */}
+        
         <motion.div 
           variants={itemVariants}
           className="group md:col-span-2 border border-slate-800 bg-slate-900/40 p-6 rounded-3xl transition-all duration-300 hover:border-cyan-500/40"
@@ -169,7 +167,7 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Contact/CTA Footer */}
+    
         <motion.div 
           variants={itemVariants}
           className="md:col-span-6 mt-4 flex flex-col md:flex-row items-center justify-between gap-4 rounded-3xl border border-slate-800 bg-slate-900/20 p-8 hover:bg-slate-900/40 transition-all shadow-inner"

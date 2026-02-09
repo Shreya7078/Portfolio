@@ -84,15 +84,14 @@ const Profiles = () => {
             transition={{ delay: index * 0.05, duration: 0.4 }}
             className="group relative"
           >
-            {/* The Card */}
+   
             <div className={`relative flex flex-col items-center justify-center h-32 rounded-3xl border border-slate-800 bg-slate-900/40 backdrop-blur-sm transition-all duration-500 group-hover:border-cyan-500/50 group-hover:bg-slate-900/80 shadow-2xl ${profile.glow}`}>
               
-              {/* External Link Icon (Small at corner) */}
               <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-40 transition-opacity">
                 <ExternalLink size={12} className="text-white" />
               </div>
 
-              {/* Platform Icon */}
+           
               <div className="relative mb-3 flex h-12 w-12 items-center justify-center transition-transform duration-500 group-hover:scale-110">
                 <img
                   src={profile.icon}
@@ -101,12 +100,10 @@ const Profiles = () => {
                 />
               </div>
 
-              {/* Platform Name */}
               <span className={`text-[10px] font-black uppercase tracking-[0.2em] text-slate-500 transition-colors duration-300 ${profile.color}`}>
                 {profile.name}
               </span>
 
-              {/* Subtle Inner Glow on Hover */}
               <div className="absolute inset-x-0 bottom-0 h-1 w-0 bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent transition-all duration-500 group-hover:w-full" />
             </div>
           </motion.a>
